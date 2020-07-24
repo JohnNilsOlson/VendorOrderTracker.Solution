@@ -45,11 +45,11 @@ namespace VendorOrderTracker.Controllers
       model.Add("orders", vendorOrders);
       return View("Show", model);
     }
-    // [HttpPost("/vendors/{vendorId}/delete")]
-    // public ActionResult Delete(int vendorId)
-    // {
-    //   Vendor.RemoveVendor(vendorId);
-    //   return View();
-    // }
+    [HttpPost("/vendors/{vendorId}/delete")]
+    public ActionResult Delete(int vendorId)
+    {
+      Vendor.RemoveVendor(vendorId);
+      return View();
+    }
   }
 }
