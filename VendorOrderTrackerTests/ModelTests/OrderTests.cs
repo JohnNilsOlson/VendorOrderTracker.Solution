@@ -49,5 +49,17 @@ namespace VendorOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+    public void FindOrder_ReturnsCorrectOrder_Order()
+    {
+      string description01 = "test order 1";
+      string description02 = "test order 2";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      Order foundOrder = Order.FindOrder(1);
+
+      Assert.AreEqual(newOrder1, foundOrder);
+    }
   }
 }
