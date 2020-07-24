@@ -78,5 +78,16 @@ namespace VendorOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void RemoveVendor_RemovesInstanceOfVendor_Int()
+    {
+      string name = "Susie's Cafe";
+      Vendor newVendor = new Vendor(name);
+      List<Vendor> allVendors = Vendor.GetAll();
+      
+      Vendor.RemoveVendor(newVendor);
+
+      Assert.AreEqual(0, allVendors.Count);
+    }
   }
 }
