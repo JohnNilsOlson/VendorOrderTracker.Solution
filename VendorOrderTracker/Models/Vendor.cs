@@ -16,9 +16,13 @@ namespace VendorOrderTracker.Models
       Id = _instances.Count;
       Orders = new List<Order>{};
     }
-        public static void ClearAll()
+    public static void ClearAll()
     {
       _instances.Clear();
+    }
+    public static List<Vendor> GetAll()
+    {
+      return _instances;
     }
   }
 }
