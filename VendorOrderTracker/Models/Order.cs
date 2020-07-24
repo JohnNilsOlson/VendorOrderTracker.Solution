@@ -22,5 +22,9 @@ namespace VendorOrderTracker.Models
     {
       return _instances;
     }
+    public static Order FindOrder(int searchId)
+    {
+      return _instances[searchId - 1];
+    }
   }
 }
