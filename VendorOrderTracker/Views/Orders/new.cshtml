@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+<form action="/vendors/{id}" method="post">
+  <div class="form-group">
+    <input class="form-control" id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+  </div>
+  <div class="form-group"></div>
+    <label for="orderDescription">Order Description</label>
+    <input class="form-control" id="orderDescription" name="orderDescription" type="text">
+  </div>
+  <button class="btn btn-primary" type="submit">Add Order</button>
+</form>
