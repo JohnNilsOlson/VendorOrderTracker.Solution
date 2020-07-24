@@ -10,7 +10,7 @@ namespace VendorOrderTracker.Tests
   {
     public void Dispose()
     {
-      Vendor.ClearAll();
+      Order.ClearAll();
     }
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Category()
@@ -21,10 +21,20 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
-      string description = "Walk the dog.";
+      string description = "test order";
       Order newOrder = new Order(description);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
+    }
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+      string description = "test order";
+      Order newOrder = new Order(description);
+
+      int result = newOrder.Id;
+
+      Assert.AreEqual(1, result);
     }
   }
 }
