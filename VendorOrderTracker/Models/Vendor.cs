@@ -6,12 +6,15 @@ namespace VendorOrderTracker.Models
   {
     private static List<Vendor> _instances = new List<Vendor> {};
     public string Name { get; set; }
-    public string Address { get; set; }
+    public string StreetAddress { get; set; }
+    public string City { get; set; }
     public int Id { get; }
     public List<Order> Orders { get; set; }
-    public Vendor(string vendorName)
+    public Vendor(string vendorName, string vendorStreetAddress, string vendorCity)
     {
       Name = vendorName;
+      StreetAddress = vendorStreetAddress;
+      City = vendorCity;
       _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Order>{};
@@ -32,9 +35,10 @@ namespace VendorOrderTracker.Models
     {
       Orders.Add(order);
     }
-    public static void RemoveVendor(Vendor vendor)
+    public static void RemoveVendor(int searchId)
     {
-      _instances.Remove(vendor);
+      Vendor foundVendor = Vendor.FindVendor(searchId);
+      _instances.Remove(foundVendor);
     }
   }
 }
