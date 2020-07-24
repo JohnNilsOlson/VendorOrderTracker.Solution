@@ -52,7 +52,7 @@ C#
   3. Type "dotnet test".
 
 ## _Bugs_
-No known issues.
+V1.00 - Remove vendor function will cause the site to crash.
 
 ## _Contact Information_
 JohnNils Olson - johnnils@gmail.com  
