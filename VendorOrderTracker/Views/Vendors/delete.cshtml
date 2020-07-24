@@ -1,0 +1,10 @@
+@using VendorOrderTracker.Models
+@{
+  Layout = "_Layout";
+}
+<h3>@Model.Name</h3>
+<h3>@Model.Id</h3>
+<h5>Vendor Removed</h5>
+<form action="/vendors" method="get">
+  <button type="submit" name="button" class="btn btn-primary">Return to Vendors</button>
+</form>
