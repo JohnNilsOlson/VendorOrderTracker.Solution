@@ -4,14 +4,19 @@
 }
 @if (@Model.Count == 0)
 {
-  <h3>No Vendors Have Been Added Yet</h3>
+  <h5>No Vendors Have Been Added Yet</h5>
 } 
 @foreach (Vendor vendor in Model)
 {
-  <h3>@vendor.Name</h3>
-  <form action="/vendors/@vendor.Id" method="get">
-    <button type="submit" name="button" class="btn btn-primary">Vendor Details</button>
-  </form>
+  <div class="vendor">
+    <h3>@vendor.Name</h3>
+    <form action="/vendors/@vendor.Id" method="get">
+      <button type="submit" name="button" class="btn btn-primary">Vendor Details</button>
+    </form>
+    <form action="/vendors/@vendor.Id/delete" method="post">
+      <button type="submit" name="button" class="btn btn-primary">Remove Vendor</button>
+    </form>
+  </div>
 }
 <form action="/vendors/new" method="get">
   <button type="submit" name="button" class="btn btn-primary">Add Vendor</button>
