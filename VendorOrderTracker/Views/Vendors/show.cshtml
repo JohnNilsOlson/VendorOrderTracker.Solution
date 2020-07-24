@@ -1,0 +1,14 @@
+@using VendorOrderTracker.Models
+@{
+  Layout = "_Layout";
+}
+<h3>@Model["vendor"].Name</h3>
+<h5>Orders</h5>
+@if (Model["orders"].Count == 0)
+{
+  <h5>No Orders Have Been Added For This Vendor</h5>
+}
+@foreach (Order order in @Model["orders"])
+{
+  <h5>@order.Description</h5>
+}
