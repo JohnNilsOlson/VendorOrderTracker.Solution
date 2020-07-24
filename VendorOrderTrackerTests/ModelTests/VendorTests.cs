@@ -27,10 +27,11 @@ namespace VendorOrderTracker.Tests
       string result = newVendor.Name;
 
       Assert.AreEqual(name, result);
-    }[TestMethod]
+    }
+    [TestMethod]
     public void GetId_ReturnsVendorId_Int()
     {
-      string name = "Test Category";
+      string name = "Susie's Cafe";
       Vendor newVendor = new Vendor(name);
 
       int result = newVendor.Id;
