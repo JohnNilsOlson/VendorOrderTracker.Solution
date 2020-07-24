@@ -15,14 +15,19 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Category()
     {
-      Vendor newVendor = new Vendor("test vendor");
+      string name = "test vendor";
+      string address = "123 fake street";
+      string city = "test city";
+      Vendor newVendor = new Vendor(name, address, city);
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
-      string name = "Test Category";
-      Vendor newVendor = new Vendor(name);
+      string name = "test vendor";
+      string address = "123 fake street";
+      string city = "test city";
+      Vendor newVendor = new Vendor(name, address, city);
 
       string result = newVendor.Name;
 
@@ -31,8 +36,10 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetId_ReturnsVendorId_Int()
     {
-      string name = "Susie's Cafe";
-      Vendor newVendor = new Vendor(name);
+      string name = "test vendor";
+      string address = "123 fake street";
+      string city = "test city";
+      Vendor newVendor = new Vendor(name, address, city);
 
       int result = newVendor.Id;
 
@@ -41,10 +48,14 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetAll_ReturnsAllVendorObjects_VendorList()
     {
-      string name01 = "Susie's Cafe";
-      string name02 = "Joe's Cafe";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string name1 = "test vendor 1";
+      string address1 = "123 fake street";
+      string city1 = "test city 1";
+      string name2 = "test vendor";
+      string address2 = "321 fake street";
+      string city2 = "test city 2";
+      Vendor newVendor1 = new Vendor(name1, address1, city1);
+      Vendor newVendor2 = new Vendor(name2, address2, city2);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       List<Vendor> result = Vendor.GetAll();
@@ -54,10 +65,14 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void FindVendor_ReturnsCorrectVendor_Vendor()
     {
-      string name01 = "Susie's Cafe";
-      string name02 = "Joe's Cafe";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string name1 = "test vendor 1";
+      string address1 = "123 fake street";
+      string city1 = "test city 1";
+      string name2 = "test vendor";
+      string address2 = "321 fake street";
+      string city2 = "test city 2";
+      Vendor newVendor1 = new Vendor(name1, address1, city1);
+      Vendor newVendor2 = new Vendor(name2, address2, city2);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       Vendor foundVendor = Vendor.FindVendor(1);
@@ -70,8 +85,10 @@ namespace VendorOrderTracker.Tests
       string description = "test order";
       Order newOrder = new Order(description);
       List<Order> newList = new List<Order> { newOrder };
-      string name = "Susie's Cafe";
-      Vendor newVendor = new Vendor(name);
+      string name = "test vendor";
+      string address = "123 fake street";
+      string city = "test city";
+      Vendor newVendor = new Vendor(name, address, city);
       newVendor.AddOrder(newOrder);
 
       List<Order> result = newVendor.Orders;
@@ -81,11 +98,13 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void RemoveVendor_RemovesInstanceOfVendor_Int()
     {
-      string name = "Susie's Cafe";
-      Vendor newVendor = new Vendor(name);
+      string name = "test vendor";
+      string address = "123 fake street";
+      string city = "test city";
+      Vendor newVendor = new Vendor(name, address, city);
       List<Vendor> allVendors = Vendor.GetAll();
       
-      Vendor.RemoveVendor(newVendor);
+      Vendor.RemoveVendor(1);
 
       Assert.AreEqual(0, allVendors.Count);
     }
